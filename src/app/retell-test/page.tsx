@@ -98,7 +98,7 @@ export default function RetellTestPage() {
 
     try {
       // Petición al backend de Python que corre en el puerto 5001
-      const response = await fetch('/api/retell/call', {
+      const response = await fetch('http://localhost:5001/api/retell/call', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
