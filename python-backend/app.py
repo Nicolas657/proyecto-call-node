@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 # 2. Configurar CORS (Cross-Origin Resource Sharing)
 # Permite que tu frontend en localhost:3000 envíe peticiones a este backend en localhost:5001.
-CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000"}})
+CORS(app, resources={r"/api/*": {"origins": "http://192.168.3.49:3000"}})
 
 # 3. Inicializar el cliente de Retell usando la API Key del entorno
 # Se verifica que la clave exista para evitar errores en tiempo de ejecución.
@@ -82,4 +82,4 @@ def create_retell_call():
 if __name__ == "__main__":
     # Se ejecuta en el puerto 5001 para no interferir con Next.js (puerto 3000)
     # debug=True habilita la recarga automática del servidor al guardar cambios
-    app.run(port=5001, debug=True)
+    app.run(host='0.0.0.0', port=5001, debug=True)
